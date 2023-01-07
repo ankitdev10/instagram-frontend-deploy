@@ -1,7 +1,7 @@
 import {axiosInstance} from "../../config";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import LeftBar from "../../components/leftbar/LeftBar";
 import "./edit.scss";
 import axios from "axios"
@@ -15,6 +15,7 @@ const Edit = () => {
   const [profilePicture, setProfilePicture] = useState(
     currentUser.profilePicture
   );
+  const navigate = useNavigate()
 
   //fetch user
 
@@ -61,7 +62,7 @@ const Edit = () => {
       });
       if (res.status === 200) {
         localStorage.setItem("user", JSON.stringify(user));
-        window.location.reload();
+        navigate(`/profile/${currentUser._id}`)
       }
     } catch (error) {
       console.log(error);
