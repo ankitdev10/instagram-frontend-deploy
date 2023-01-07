@@ -170,7 +170,6 @@ const Post = ({ post }) => {
           </div>
         </div>
       </div>
-      <span className="caughtUp">You are all caught up!</span>
     </div>
   );
 };
