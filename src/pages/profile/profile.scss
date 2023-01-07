@@ -1,0 +1,31 @@
+.profile {
+  // width: 100vw;
+  background-color: #efefefcc;
+  position: relative;
+
+  .profileWrapper {
+    display: flex;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+
+    .leftBar {
+      flex: 1.25;
+      z-index: 1;
+
+      @media screen and (max-width: 480px) {
+        flex: 1;
+        position: absolute;
+      }
+    }
+
+    .feed {
+      flex: 6.75;
+
+      @media screen and (max-width: 480px) {
+        flex: 3;
+      }
+    }
+  }
+}

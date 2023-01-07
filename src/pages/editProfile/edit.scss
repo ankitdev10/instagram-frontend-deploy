@@ -1,0 +1,135 @@
+.edit {
+  // width: 100vw;
+  background-color: #efefefcc;
+  position: relative;
+
+  .editWrapper {
+    display: flex;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+
+    .leftBar {
+      flex: 1.25;
+      z-index: 1;
+
+      @media screen and (max-width: 480px) {
+        flex: 1;
+        position: absolute;
+      }
+    }
+    .editForm {
+      flex: 6.75;
+      padding: 2rem 10rem 0 10rem;
+      display: flex;
+      justify-content: center;
+
+      @media screen and (max-width: 900px) {
+        padding: 2rem 0 0 0;
+      }
+
+      form {
+        width: 60%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: white;
+        border-radius: 30px;
+        height: max-content;
+        position: relative;
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          padding: 1rem;
+        }
+
+        @media screen and (min-width: 480px) and (max-width: 900px) {
+          width: 90%;
+          padding: 1rem;
+        }
+
+        .editFormTop {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+          .editFormUser {
+            display: flex;
+            flex-direction: column;
+
+            .editFormUsername {
+              font-size: 14px;
+            }
+
+            .changePP {
+              font-size: 14px;
+              font-weight: 700;
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              color: rgb(0, 149, 246);
+            }
+          }
+        }
+
+        .formItem {
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
+
+          label {
+            width: 100px;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+
+          .editInputBox {
+            width: 300px;
+            padding: 8px 10px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            outline: none;
+          }
+        }
+        .btnContainer {
+          width: 85%;
+          display: flex;
+          justify-content: flex-end;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
+
+          .editFormBtn {
+            width: max-content;
+            padding: 6px 10px;
+            border: none;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 14px;
+            color: rgb(0, 149, 246);
+            font-weight: 600;
+            cursor: pointer;
+
+       
+
+           
+          }
+        }
+      }
+    }
+  }
+}

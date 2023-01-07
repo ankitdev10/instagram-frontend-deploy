@@ -1,0 +1,132 @@
+.leftbarContainer {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-right: 1px solid rgba(239, 239, 239, 0.6);
+
+  .mobileIcon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    div {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+    }
+
+    @media screen and (max-width: 480px) {
+      display: flex;
+    }
+  }
+
+  .leftbarWrapper {
+    padding: 30px 20px;
+    position: relative;
+
+    @media screen and (max-width: 480px) {
+      padding: 30px 10px;
+      &.hidden {
+        display: none;
+      }
+    }
+
+    .logo {
+      font-size: 24px;
+      font-family: "Pacifico", cursive;
+      cursor: pointer;
+    }
+
+    .leftBarItems {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 480px) {
+        margin-top: 1.5rem;
+      }
+
+      .itemsTop {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media screen and (max-width: 480px) {
+          gap: 20px;
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          cursor: pointer;
+          position: relative;
+
+          .icon {
+            font-size: 30px !important;
+          }
+
+          span {
+            font-size: 15px;
+            font-weight: 400;
+          }
+
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+
+            object-fit: cover;
+          }
+
+          .number {
+            position: absolute;
+            left: 20px;
+            top: -5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .itemsBottom {
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+
+        .icon {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          div {
+            width: 20px;
+            height: 3px;
+            background-color: black;
+          }
+        }
+      }
+    }
+    .searchBox {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

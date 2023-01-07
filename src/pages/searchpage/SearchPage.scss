@@ -1,0 +1,46 @@
+// * {
+//   outline: 1px solid #f00 !important;
+//   opacity: 1 !important;
+//   visibility: visible !important;
+// }
+
+.searchPage {
+    // width: 100vw;
+    background-color: #efefefcc;
+    position: relative;
+  
+    .searchWrapper {
+      display: flex;
+  
+      @media screen and (max-width: 480px) {
+        flex-direction: column;
+      }
+  
+      .leftBar {
+        flex: 1.25;
+        z-index: 1;
+  
+        @media screen and (max-width: 480px) {
+          flex: 1;
+          position: absolute;
+        }
+      }
+  
+      .searchContainer {
+        flex: 4;
+  
+        @media screen and (max-width: 480px) {
+          flex: 3;
+        }
+      }
+      .rightBar {
+        flex: 2.75;
+  
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+        // background-color: red;
+      }
+    }
+  }
+  

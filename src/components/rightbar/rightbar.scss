@@ -1,0 +1,136 @@
+.rightbarContainer {
+  margin-top: 2rem;
+  padding: 0.5rem 10rem 0rem 0rem;
+
+  .rightBarTop {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .rightBarTopLeft {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      justify-content: center;
+
+      .rightBarPP {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .accountInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        gap: 5px;
+
+        .userName {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .accountName {
+          font-size: 16px;
+          color: gray;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .signOutBtn {
+      border: none;
+      color: rgb(0, 149, 246);
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  .rightBarBottom {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .suggestion {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .suggestionText {
+        font-size: 14px;
+        color: gray;
+        font-weight: 500;
+      }
+
+      .seeSuggestion {
+        font-size: 14px;
+        color: gray;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+
+      }
+    }
+
+    .suggestedAccounts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 8px;
+
+      .suggestedAccountLeft {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .suggestedPP {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        .suggestedInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+
+          .suggestedUserName {
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          .suggestedAccountFollowedBy {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(128, 128, 128, 0.587);
+          }
+        }
+      }
+
+      .followBtn {
+        border: none;
+        color: rgb(0, 149, 246);
+        font-size: 12px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .rightBarCopyright {
+    margin-top: 5rem;
+    padding: 1rem;
+    span {
+      font-weight: 300;
+      font-size: 14px;
+      color: rgba(165, 165, 165, 0.865);
+    }
+  }
+}

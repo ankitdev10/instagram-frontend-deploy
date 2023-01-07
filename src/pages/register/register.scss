@@ -1,0 +1,106 @@
+.register {
+  //   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+
+  .registerWrapper {
+    width: 80%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    .registerTop {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h1 {
+        font-size: 1.8rem;
+        font-family: "Pacifico", cursive;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      h5 {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(165, 161, 161);
+        text-align: center;
+      }
+
+      .loginFb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #0095f6;
+        border-radius: 5px;
+        color: white;
+
+        .fbIcon {
+          color: white;
+        }
+      }
+
+      .registerForm {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        input {
+          padding: 10px;
+          border: 1px solid grey;
+          outline: none;
+        }
+
+        .signUp {
+          border: none;
+          padding: 10px;
+          color: white;
+          background-color: #0095f6;
+          border-radius: 6px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+
+          &:disabled{
+            background-color: gray;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    .registerBottom {
+      min-width: 250px;
+      max-width: 300px;
+      width: 100%;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      border-radius: 8px;
+      color: gray;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .error {
+      color: red;
+      font-weight: 500;
+      font-size: 14px;
+      display: block;
+      text-align: center;
+    }
+  }
+}
