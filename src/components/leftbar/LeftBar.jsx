@@ -8,11 +8,13 @@ import {
   FavoriteBorderOutlined,
   AddBoxOutlined,
   Close,
+  Logout,
 } from "@mui/icons-material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Upload from "../upload/Upload";
 import { useSelector } from "react-redux";
+import { logout } from "../../redux/userSlice";
 
 const LeftBar = () => {
   const [open, setOpen] = useState(false); // intially not opened
@@ -23,6 +25,12 @@ const LeftBar = () => {
   const handleUploadPage = () => {
     open ? navigate("/upload") : setOpenUpload(true);
   };
+
+  const handleSignout = () => {
+    dispatch(logout());
+    localStorage.removeItem("user");
+  };
+
   return (
     <div className="leftbarContainer">
       {!open && (
@@ -106,6 +114,10 @@ const LeftBar = () => {
                 <span>{currentUser?.username}</span>
               </div>
             </Link>
+            <div onClick={handleSignout} className="item">
+              <Logout className="icon" />
+              <span>Sign Out</span>
+            </div>
           </div>
 
           <div className="itemsBottom">
