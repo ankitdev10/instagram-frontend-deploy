@@ -15,12 +15,14 @@ import { Link, useNavigate } from "react-router-dom";
 import Upload from "../upload/Upload";
 import { useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 const LeftBar = () => {
   const [open, setOpen] = useState(false); // intially not opened
   const [openUpload, setOpenUpload] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  
   const { currentUser } = useSelector((state) => state.user);
   const handleUploadPage = () => {
     open ? navigate("/upload") : setOpenUpload(true);
