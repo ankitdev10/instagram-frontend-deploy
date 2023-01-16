@@ -5,10 +5,11 @@
 
   .noPost {
     margin-top: 1.2rem;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 400;
     color: gray;
     text-align: center;
+    color: rgb(0, 149, 246);
 
     @media screen and (max-width: 480px) {
       background-color: white;

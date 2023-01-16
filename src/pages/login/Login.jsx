@@ -5,18 +5,21 @@ import { Facebook } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import {  useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginSuccess } from "../../redux/userSlice";
+import { loginStart, loginSuccess } from "../../redux/userSlice";
 import { axiosInstance } from "../../config";
+import { ClipLoader } from "react-spinners";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const res = await axiosInstance.post("/auth/login", {
         email,
@@ -31,6 +34,7 @@ const Login = () => {
       setErr(error.response.data.message);
     }
     setPassword("");
+    setLoading(false)
   };
 
   // remove error message
@@ -63,7 +67,7 @@ const Login = () => {
                 required = {true}
               />
               <button type="submit" onClick={handleLogin} className="loginBtn">
-                Login
+                {loading ? <ClipLoader color="#36d7b7" /> : "Login"}
               </button>
             </form>
             <span className="or">Or</span>

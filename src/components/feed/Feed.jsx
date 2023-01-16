@@ -3,13 +3,14 @@ import Story from "../stories/Story";
 import "./feed.scss";
 
 import { useEffect } from "react";
-import {axiosInstance} from "../../config"
+import { axiosInstance } from "../../config";
 import { useState } from "react";
 
 import { useLocation } from "react-router-dom";
 
 const Feed = ({ page }) => {
   const [followingPosts, setFollowingPosts] = useState([]);
+  const [randomPosts, setRandomPosts] = useState([]);
   const [userPosts, setUserPosts] = useState([]);
   const location = useLocation();
   const userId = location.pathname.split("/")[2];
@@ -29,6 +30,17 @@ const Feed = ({ page }) => {
     getFollowingPosts();
   }, [userId]);
 
+  //get random posts
+
+  useEffect(() => {
+    const getRandomPosts = async () => {
+      try {
+        const res = await axiosInstance.get("/posts");
+        setRandomPosts(res.data.splice(0, 3));
+      } catch (error) {}
+    };
+    getRandomPosts();
+  }, [userId]);
 
   useEffect(() => {
     const getUserPosts = async () => {
@@ -48,7 +60,15 @@ const Feed = ({ page }) => {
     <div className="feedContainer">
       <Story />
       {followingPosts.length === 0 && (
-        <div className="noPost">Please follow to see other users posts</div>
+        <>
+          <div className="noPost">
+            You are looking at some random posts. Please follow to see your
+            friends' posts.
+          </div>
+          {randomPosts.map((post) => (
+            <Post key={post._id} post={post} />
+          ))}
+        </>
       )}
       {page === "home" &&
         followingPosts.map((post) => <Post post={post} key={post._id} />)}
